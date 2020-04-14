@@ -1,6 +1,5 @@
 <template>
   <div id="square" class="">
-  <title>广场</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <!--<link href="files/广场/styles.css" type="text/css" rel="stylesheet"/>-->

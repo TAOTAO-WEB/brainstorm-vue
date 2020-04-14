@@ -1,6 +1,5 @@
 <template>
   <div id="Register" class="">
-    <title v-html="title">注册</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <!--<link href="files/用户名注册/styles.css" type="text/css" rel="stylesheet"/>-->
@@ -74,7 +73,7 @@
     <!-- 密码 (文本框) -->
     <div id="u20" class="ax_default text_field" data-label="密码">
       <div id="u20_div" class=""></div>
-      <input id="u20_input" type="password" value="" class="u20_input"/>
+      <input id="u20_input" type="password" v-model="password" value="" class="u20_input"/>
     </div>
 
     <!-- Unnamed (矩形) -->

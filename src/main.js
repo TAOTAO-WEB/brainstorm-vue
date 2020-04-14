@@ -17,6 +17,14 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {//beforeEach是router的钩子函数，在进入路由前执行
+  if (to.meta.title) {//判断是否有标题
+    console.log(to.meta.title);
+    document.title = to.meta.title
+  }
+  next()
+});
+
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   // 参数格式转换

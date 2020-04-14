@@ -9,6 +9,7 @@ import userpage from '@/components/BS_UserPage'
 
 Vue.use(Router);
 
+
 export default new Router({
   routes: [
     {
@@ -16,36 +17,57 @@ export default new Router({
       redirect:{
         name: 'signin',
       },
+      meta: {
+        title: '登录'
+      }
     },
     {
       path: '/signin',
       name: 'signin',
-      component: signin
+      component: signin,
+      meta: {
+        title: '登录'
+      }
     },
     {
       path:'/register',
       name: 'register',
-      component: register
+      component: register,
+      meta: {
+        title: '注册'
+      }
     },
     {
       path:'/square',
       name:'square',
-      component:square
+      component:square,
+      meta: {
+        title: '广场'
+      }
     },
     {
       path:'/postpot',
       name:'postpot',
-      component:postpot
+      component:postpot,
+      meta: {
+        title: '发布'
+      }
     },
     {
       path:'/themepage',
       name:'themepage',
-      component:themepage
+      component:themepage,
+      meta: {
+        title: '帖子'
+      }
     },
     {
       path:'/userpage',
       name:'userpage',
-      component:userpage
+      component:userpage,
+      meta: {
+        title: '个人主页'
+      }
     }
   ]
 })

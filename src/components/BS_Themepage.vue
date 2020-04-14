@@ -1,6 +1,5 @@
 <template>
   <div id="themepage" class="">
-  <title>帖子</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <!--<link href="files/帖子/styles.css" type="text/css" rel="stylesheet"/>-->
