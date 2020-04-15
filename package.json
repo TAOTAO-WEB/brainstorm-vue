@@ -14,9 +14,10 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "qs": "latest",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "qs": "latest"
+    "vuex": "^3.1.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

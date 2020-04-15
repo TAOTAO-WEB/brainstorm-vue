@@ -83,23 +83,32 @@ export default {
       name:'',
       password:'',
       token:'',
+      access:'',
     }
   },
   methods:{
-    handle:async function(){
+    signin:async function(){
       var ret = await this.$axios.post("user/signup",{
         name:this.name,
         password:this.password,
-      }).then(function (response) {
-        console.log(response)})
-        .catch(function (error) {
-          console.log(error.response);
+      }).then(response=> {
+        console.log(response);
+        alert(response.data.msg);
+        if(response.data.msg==='登录成功'){
+          console.log(this.token);
+          window.localStorage.setItem('token', response.data.token);
+          // this.$store.commit('set_token', this.token);
+          window.location.pathname = '/';
+          return this.$router.push({path: '/square'});
+
+          }
+        else{
+          this.name='';
+          this.password='';
+        }
+        }).catch(function (error) {
+          console.log("error:"+error);
         });
-      this.user=ret.data.user;
-      this.token=ret.data.token;
-    },
-    signin:function(){
-      this.$router.push({path: '/square'});
     },
     regis:function(){
       this.$router.push({path: '/register'});

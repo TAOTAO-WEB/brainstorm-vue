@@ -216,8 +216,9 @@
     }
 }
 
+
 </script>
 
 <style scoped>
-  @import '../assets/files/用户界面/styles.css';
+@import '../assets/files/用户界面/styles.css';
 </style>

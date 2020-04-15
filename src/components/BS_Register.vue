@@ -59,7 +59,7 @@
     <!-- 账号 (文本框) -->
     <div id="u18" class="ax_default text_field" data-label="账号">
       <div id="u18_div" class=""></div>
-      <input id="u18_input" type="text" value="" class="u18_input" name='name' v-model='name'/>
+      <input id="u18_input" type="text" value="" class="u18_input" v-model='name'/>
     </div>
 
     <!-- Unnamed (矩形) -->
@@ -125,15 +125,19 @@ export default {
   },
   methods:{
     handle:async function(){
-      await this.$axios.post("user/signup",{
+      await this.$axios.post("user/register",{
         name:this.name,
         password:this.password,
       }).then(function (response) {
-        console.log(response)})
+        console.log(response)
+          alert(response.data.msg)
+      }
+        )
         .catch(function (error) {
         console.log(error.response);
       });
-    }
+      this.$router.push({path: '/signin'});
+    },
   }
 }
 </script>

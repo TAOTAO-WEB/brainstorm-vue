@@ -92,28 +92,6 @@
     <!-- Unnamed (组合) -->
     <div :key="item.topicid" v-for="item in topicList" id="u38" class="ax_default" data-left="135" data-top="247" data-width="657" data-height="170">
 
-      <!-- Unnamed (组合) -->
-      <div id="u39" class="ax_default" data-left="135" data-top="247" data-width="657" data-height="170">
-
-        <!-- Unnamed (组合) -->
-        <div id="u40" class="ax_default" data-left="135" data-top="247" data-width="657" data-height="170">
-
-          <!-- Unnamed (矩形) -->
-          <div id="u41" class="ax_default box_1">
-            <div id="u41_div" class=""></div>
-            <div id="u41_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u42" class="ax_default _二级标题">
-            <div id="u42_div" class=""></div>
-            <div id="u42_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
           <!-- Unnamed (矩形) -->
           <div id="u43" class="ax_default _二级标题">
             <div id="u43_div" class=""></div>
@@ -173,7 +151,7 @@
               </div>
             </div>
           </div>
-        </div>
+
 
         <!-- Unnamed (形状) -->
         <div id="u51" class="ax_default icon">
@@ -190,7 +168,6 @@
             <p><span>3500</span></p>
           </div>
         </div>
-      </div>
 
       <!-- Unnamed (矩形) -->
       <div id="u53" class="ax_default label">
@@ -217,11 +194,8 @@
       </div>
     </div>
 
-    <!-- Unnamed (组合) -->
-    <div id="u56" class="ax_default" data-left="620" data-top="205" data-width="172" data-height="30">
-
       <!-- Unnamed (组合) -->
-      <div id="u57" class="ax_default" data-left="620" data-top="205" data-width="172" data-height="30">
+      <div id="u57" class="ax_default" data-left="620" data-top="205" data-width="172" data-height="30" @click="routepostpot">
 
         <!-- Unnamed (矩形) -->
         <div id="u58" class="ax_default paragraph">
@@ -239,7 +213,6 @@
           </div>
         </div>
       </div>
-    </div>
 
     <!-- 排序 (矩形) -->
     <div id="u60" class="ax_default paragraph" data-label="排序">
@@ -307,17 +280,19 @@ export default {
       else{
         this.order='DESC';
       }
-      queryData();
+      this.queryData();
+    },
+    routepostpot:function(){
+      this.$router.push({path: '/postpot'});
     },
     queryData:async function(){
       var ret = await this.$axios.post('http://localhost:8080/topic/getAllTopic',{
         order:this.order,
-      }).then(function (response) {
-        console.log(response)})
-        .catch(function (error) {
-          console.log(error.response);
+      }).then(response=>{
+        this.topicList=response.data.topicList;
+      }).catch(function (error) {
+          console.log("error.response:"+error);
         });
-      this.topicList=ret.data.topicList;
     },
   },
   mounted:function(){
