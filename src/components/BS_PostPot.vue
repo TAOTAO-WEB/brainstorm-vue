@@ -130,29 +130,31 @@ export default {
     }
   },
   methods:{
-    queryData:async function(){
-      var ret = await this.$axios.post("topic/publishtopic").then(function (response) {
-        console.log(response)})
-        .catch(function (error) {
-          console.log(error.response);
-        });
-    },
+    // queryData:async function(){
+    //   var ret = await this.$axios.post("topic/publishtopic").then(function (response) {
+    //     console.log(response)})
+    //     .catch(function (error) {
+    //       console.log(error.response);
+    //     });
+    // },
     handle:async function(){
-      var ret = await this.$axios.post('http://localhost:8080/topic/publishtopic',{
+      var ret = await this.$axios.post('topic/publishtopic',{
         context:this.context,
         description:this.description,
         tag:this.tag,
       }).then(response=>{
-        console.log(response)})
+        console.log(response);
+      alert(response.data.msg)
+      })
         .catch(function (error) {
           console.log(error);
         });
-      console.log("发布主题帖成功");
+      //console.log("发布主题帖成功");
     },
   },
-  mounted:function(){
-    this.queryData();
-  }
+  // mounted:function(){
+  //   this.queryData();
+  // }
 }
 </script>
 
