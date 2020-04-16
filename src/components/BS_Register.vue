@@ -129,7 +129,7 @@ export default {
         name:this.name,
         password:this.password,
       }).then(function (response) {
-        console.log(response)
+        console.log(response);
           alert(response.data.msg)
       }
         )

@@ -6,10 +6,12 @@ import router from './router'
 import axios from 'axios'
 import qs from 'qs'
 import store from './router/store.js'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 // import 'assets/resources/css/axure_rp_page.css'
 // import 'assets/data/styles.css'
-
+Vue.use(ElementUI);
 Vue.prototype.$axios = axios;
 axios.defaults.baseURL = 'http://localhost:8080/';
 axios.defaults.timeout = 10000;

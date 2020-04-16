@@ -66,12 +66,12 @@
 
     <!-- Unnamed (矩形) -->
     <div id="u9" class="ax_default primary_button">
-      <button @click="signin">Sign in</button>
+      <el-button type="primary" @click="signin">Sign in</el-button>
     </div>
 
     <!-- Unnamed (矩形) -->
     <div id="u10" class="ax_default primary_button">
-      <button @click="regis">Register</button>
+      <el-button type="primary" @click="regis">Register</el-button>
     </div>
   </div>
 </template>
