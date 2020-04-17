@@ -110,7 +110,7 @@
 
     <!-- Unnamed (矩形) -->
     <div id="u25" class="ax_default primary_button">
-      <button @click="handle">Register</button>
+      <el-button type="primary" @click="handle">Register</el-button>
     </div>
   </div>
 </template>

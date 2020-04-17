@@ -9,13 +9,15 @@ import store from './router/store.js'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
+Vue.use(ElementUI);
 // import 'assets/resources/css/axure_rp_page.css'
 // import 'assets/data/styles.css'
-Vue.use(ElementUI);
+
 Vue.prototype.$axios = axios;
 axios.defaults.baseURL = 'http://localhost:8080/';
 axios.defaults.timeout = 10000;
-axios.defaults.headers.common['Authentication-Token'] = store.state.token;
+//axios.defaults.headers.common['Authentication-Token'] = store.state.token;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 
 if(window.localStorage.getItem('token')!=null){
@@ -23,6 +25,7 @@ if(window.localStorage.getItem('token')!=null){
   axios.defaults.headers.post['token']=window.localStorage.getItem('token');
   console.log(window.localStorage.getItem('token'));
 }
+
 Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {//beforeEach是router的钩子函数，在进入路由前执行

@@ -1,68 +1,37 @@
 <template>
   <div id="square" class="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-  <!--<link href="files/广场/styles.css" type="text/css" rel="stylesheet"/>-->
-    <!-- Unnamed (矩形) -->
-    <div id="u27" class="ax_default box_1">
-      <div id="u27_div" class=""></div>
-      <div id="u27_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <!--<link href="files/广场/styles.css" type="text/css" rel="stylesheet"/>-->
+    <div style='margin-top:25px;margin-left: 900px;width:500px' v-model="username">
+      <img src="../assets/images/1.png" @click="routeuserpage(username)"/>
+      <template >
+        <span style="margin-top:-10px;margin-left:10px">{{username}}</span>
+      </template>
     </div>
-
     <!-- Unnamed (矩形) -->
-    <div id="u28" class="ax_default _二级标题">
-      <div id="u28_div" class=""></div>
-      <div id="u28_text" class="text ">
+    <div id="u28" class="ax_default _二级标题" style="margin-top:-10px ">
         <p><span>BrainStorming</span></p>
-      </div>
     </div>
 
     <!-- Unnamed (矩形) -->
-    <div id="u29" class="ax_default _二级标题">
-      <div id="u29_div" class=""></div>
-      <div id="u29_text" class="text ">
+    <div id="u29" class="ax_default _二级标题" style="margin-top:-10px ">
         <p><span>Round Table Conference</span></p>
-      </div>
     </div>
 
     <!-- Unnamed (矩形) -->
-    <div id="u30" class="ax_default _二级标题">
-      <div id="u30_div" class=""></div>
-      <div id="u30_text" class="text ">
+    <div id="u30" class="ax_default _二级标题" style="margin-top:-10px ">
         <p><span>&quot;Yes and&quot;</span></p>
-      </div>
     </div>
 
     <!-- Unnamed (线段) -->
-    <div id="u31" class="ax_default _线段">
+    <div id="u31" class="ax_default _线段" style="margin-left:-30px ">
       <img id="u31_img" class="img " src="../assets/images/广场/u31.svg"/>
-      <div id="u31_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
     </div>
 
     <!-- Unnamed (线段) -->
     <div id="u32" class="ax_default _线段">
-      <img id="u32_img" class="img " src="../assets/images/广场/u31.svg"/>
-      <div id="u32_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
-    </div>
-
-    <!-- Unnamed (文本框) -->
-    <div id="u33" class="ax_default text_field">
-      <div id="u33_div" class=""></div>
-      <input id="u33_input" type="text" value="" class="u33_input"/>
-    </div>
-
-    <!-- Unnamed (形状) -->
-    <div id="u34" class="ax_default icon">
-      <img id="u34_img" class="img " src="../assets/images/广场/u34.svg"/>
-      <div id="u34_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
+      <img id="u32_img" class="img " style="margin-left:0px;margin-top: 50px"src="../assets/images/广场/u31.svg"/>
     </div>
 
     <!-- Unnamed (矩形) -->
@@ -89,130 +58,58 @@
       </div>
     </div>
 
-    <!-- Unnamed (组合) -->
-    <div :key="item.topicid" v-for="item in topicList" id="u38" class="ax_default" data-left="135" data-top="247" data-width="657" data-height="170">
-
-          <!-- Unnamed (矩形) -->
-          <div id="u43" class="ax_default _二级标题">
-            <div id="u43_div" class=""></div>
-            <div id="u43_text" class="text ">
-              <p><span>{{item.context}}</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (图片 ) -->
-          <div id="u44" class="ax_default image">
-            <img id="u44_img" class="img " src="../assets/images/广场/u44.svg"/>
-            <div id="u44_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (形状) -->
-          <div id="u45" class="ax_default icon">
-            <img id="u45_img" class="img " src="../assets/images/广场/u45.svg"/>
-            <div id="u45_text" class="text " style="display:none; visibility: hidden">
-              <p></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u46" class="ax_default label">
-            <div id="u46_div" class=""></div>
-            <div id="u46_text" class="text ">
-              <p><span>2,808 Reply</span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (矩形) -->
-          <div id="u47" class="ax_default _文本段落">
-            <div id="u47_div" class=""></div>
-            <div id="u47_text" class="text ">
-              <p><span>{{item.description}} </span></p>
-            </div>
-          </div>
-
-          <!-- Unnamed (组合) -->
-          <div id="u48" class="ax_default" data-left="494" data-top="371" data-width="154" data-height="23">
-
-            <!-- Unnamed (形状) -->
-            <div id="u49" class="ax_default icon">
-              <img id="u49_img" class="img " src="../assets/images/广场/u49.svg"/>
-              <div id="u49_text" class="text " style="display:none; visibility: hidden">
-                <p></p>
-              </div>
-            </div>
-
-            <!-- Unnamed (矩形) -->
-            <div id="u50" class="ax_default label">
-              <div id="u50_div" class=""></div>
-              <div id="u50_text" class="text ">
-                <p><span>Name_of_Manager</span></p>
-              </div>
-            </div>
-          </div>
-
-
-        <!-- Unnamed (形状) -->
-        <div id="u51" class="ax_default icon">
-          <img id="u51_img" class="img " src="../assets/images/广场/u51.svg"/>
-          <div id="u51_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u52" class="ax_default label">
-          <div id="u52_div" class=""></div>
-          <div id="u52_text" class="text ">
-            <p><span>3500</span></p>
-          </div>
-        </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u53" class="ax_default label">
-        <div id="u53_div" class=""></div>
-        <div id="u53_text" class="text ">
-          <p><span>{{item.date | format('MM-dd hh:mm')}}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (矩形) -->
-      <div id="u54" class="ax_default label">
-        <div id="u54_div" class=""></div>
-        <div id="u54_text" class="text ">
-          <p><span>{{item.tag}}</span></p>
-        </div>
-      </div>
+    <div  style="margin-top:160px;margin-left:850px" >
+      <el-button type="primary" v-model="username" @click="routepostpot(username)" round>Add Topic</el-button>
     </div>
+    <!-- Unnamed (组合) -->
+    <template>
+      <el-table
+        :data="topicList"
+        style="width: 80%;top:50px;left:100px">
+        <el-table-column
+          label="Time"
+          width="180">
+          <template slot-scope="scope">
+            <i class="el-icon-time"></i>
+            <span style="margin-left: 10px">{{ scope.row.date | format('MM-dd hh:mm') }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="Theme"
+          width="200px">
+          <template slot-scope="scope">
+            <span style="margin-left: 10px">{{ scope.row.context }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column
+          label="Description"
+          width="200px">
+          <template slot-scope="scope">
+            <span style="margin-left: 10px">{{ scope.row.description }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column>
+          <template slot-scope="scope">
+            <el-tag>{{scope.row.tag}}</el-tag>
+          </template>
+        </el-table-column>
+        <el-table-column>
+          <template slot-scope="scope">
+            <el-button type="primary" size="mini" @click='routethemepage(scope.row.topicid,scope.row.context,scope.row.description)'>Join in</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+    </template>
 
     <!-- Unnamed (形状) -->
-    <div id="u55" class="ax_default icon">
+    <div id="u55" class="ax_default icon" @click="routesignin">
       <img id="u55_img" class="img " src="../assets/images/广场/u55.svg"/>
       <div id="u55_text" class="text " style="display:none; visibility: hidden">
         <p></p>
       </div>
     </div>
 
-      <!-- Unnamed (组合) -->
-      <div id="u57" class="ax_default" data-left="620" data-top="205" data-width="172" data-height="30" @click="routepostpot">
 
-        <!-- Unnamed (矩形) -->
-        <div id="u58" class="ax_default paragraph">
-          <div id="u58_div" class=""></div>
-          <div id="u58_text" class="text ">
-            <p><span></span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (矩形) -->
-        <div id="u59" class="ax_default _三级标题">
-          <div id="u59_div" class=""></div>
-          <div id="u59_text" class="text ">
-            <p><span>Create Theme</span></p>
-          </div>
-        </div>
-      </div>
 
     <!-- 排序 (矩形) -->
     <div id="u60" class="ax_default paragraph" data-label="排序">
@@ -270,7 +167,11 @@ export default {
     return{
       order:'DESC',
       topicList:[],
+      username:this.$route.query.name,
     }
+  },
+  props:{
+    "id":String,
   },
   methods:{
     orderPots:async function(){
@@ -282,17 +183,43 @@ export default {
       }
       this.queryData();
     },
-    routepostpot:function(){
-      this.$router.push({path: '/postpot'});
+    routepostpot:function(name){
+      console.log("name");
+      console.log(name);
+      this.$router.push({path: '/postpot',query:{name:name}});
+    },
+    routesignin:function(){
+      this.$router.push({path: '/signin'});
+    },
+    routeuserpage:function(name){
+      console.log("routeuserpage.name");
+      console.log(name);
+      this.$router.push({path: '/userpage',query:{name:name}});
+    },
+    routethemepage:function(id,theme,desc){
+      // console.log(id);
+      // let params = {
+      //   id:this.id,
+      //   try:'123',
+      // };
+      // this.$router.push({path: '/themepage',params: params});
+      // console.log("id");
+      //console.log(id);
+      // localStorage.setItem("topicid",id);
+      this.$router.push({path: '/themepage',query:{id:id,theme:theme,desc:desc,name:name}});
     },
     queryData:async function(){
       var ret = await this.$axios.post('http://localhost:8080/topic/getAllTopic',{
         order:this.order,
       }).then(response=>{
         this.topicList=response.data.topicList;
+        console.log("this.topicList");
+        console.log(this.topicList);
       }).catch(function (error) {
           console.log("error.response:"+error);
         });
+      console.log("this.$route.query.name");
+      console.log(this.$route.query.name);
     },
   },
   mounted:function(){

@@ -5,33 +5,19 @@
   <!--<link href="files/登录/styles.css" type="text/css" rel="stylesheet"/>-->
 
     <!-- Unnamed (矩形) -->
-    <div id="u0" class="ax_default _一级标题">
+    <div id="u0" class="ax_default _一级标题" >
       <div id="u0_div" class=""></div>
-      <div id="u0_text" class="text ">
-        <p><span>Welcome to BrainStorming</span></p>
+      <div id="u0_text" class="text " style='margin-top: -100px;margin-left:-20px'>
+        <h1><span>Welcome to BrainStorming</span></h1>
       </div>
     </div>
 
-    <!-- Unnamed (矩形) -->
-    <div id="u1" class="ax_default _三级标题">
-      <div id="u1_div" class=""></div>
-      <div id="u1_text" class="text ">
-        <p><span>Account</span></p>
-      </div>
-    </div>
 
-    <!-- Unnamed (矩形) -->
-    <div id="u2" class="ax_default _三级标题">
-      <div id="u2_div" class=""></div>
-      <div id="u2_text" class="text ">
-        <p><span>Phone number</span></p>
-      </div>
-    </div>
 
     <!-- Unnamed (矩形) -->
     <div id="u3" class="ax_default _三级标题">
       <div id="u3_div" class=""></div>
-      <div id="u3_text" class="text ">
+      <div id="u3_text" class="text " style='margin-top: -140px;margin-left:-20px'>
         <p><span>User Id</span></p>
       </div>
     </div>
@@ -39,39 +25,30 @@
     <!-- Unnamed (矩形) -->
     <div id="u4" class="ax_default _三级标题">
       <div id="u4_div" class=""></div>
-      <div id="u4_text" class="text ">
+      <div id="u4_text" class="text " style='margin-top: -130px;margin-left:-20px'>
         <p><span>Password</span></p>
       </div>
     </div>
 
     <!-- userid (文本框) -->
-    <div id="u5" class="ax_default text_field" data-label="userid">
-      <div id="u5_div" class=""></div>
-      <input id="u5_input" type="text" value="" class="u5_input" name='name' v-model='name'/>
+    <div id="u5" data-label="userid" style='margin-top: -130px;margin-left:-20px'>
+      <el-input id="u5_input" type="text" value=""name='name' v-model='name'/>
     </div>
 
     <!-- password (文本框) -->
-    <div id="u6" class="ax_default text_field" data-label="password">
-      <div id="u6_div" class=""></div>
-      <input id="u6_input" type="text" value="" class="u6_input" name='password' v-model='password'/>
+    <div id="u6" style='margin-top: -130px;margin-left:-20px'>
+      <el-input id="u6_input" type="password" value=""  name='password' v-model='password'/>
     </div>
 
-    <!-- Unnamed (线段) -->
-    <div id="u7" class="ax_default _线段">
-      <img id="u7_img" class="img " src="../assets/images/登录/u7.svg"/>
-      <div id="u7_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
-    </div>
 
     <!-- Unnamed (矩形) -->
-    <div id="u9" class="ax_default primary_button">
+    <div id="u9" class="ax_default primary_button" style='margin-top: -100px;margin-left:-20px'>
       <el-button type="primary" @click="signin">Sign in</el-button>
     </div>
 
     <!-- Unnamed (矩形) -->
-    <div id="u10" class="ax_default primary_button">
-      <el-button type="primary" @click="regis">Register</el-button>
+    <div id="u10" class="ax_default primary_button" style='margin-top: -100px;margin-left:-20px'>
+      <el-button  @click="regis">Register</el-button>
     </div>
   </div>
 </template>
@@ -99,8 +76,9 @@ export default {
           window.localStorage.setItem('token', response.data.token);
           // this.$store.commit('set_token', this.token);
           window.location.pathname = '/';
-          return this.$router.push({path: '/square'});
-
+          console.log("this.name");
+          console.log(this.name);
+          this.$router.push({path: '/square',query:{name:this.name}});
           }
         else{
           this.name='';
@@ -110,9 +88,20 @@ export default {
           console.log("error:"+error);
         });
     },
-    regis:function(){
-      this.$router.push({path: '/register'});
-    },
+    regis:async function(){
+      this.$router.push({path: '/register'})
+      // await this.$axios.post("user/register",{
+      //   name:this.name,
+      //   password:this.password,
+      // }).then(function (response) {
+      //     console.log(response)
+      //     alert(response.data.msg)
+      //   }
+      // )
+      //   .catch(function (error) {
+      //     console.log(error.response);
+      //   });
+    }
   },
 }
 </script>
